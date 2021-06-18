@@ -3,10 +3,11 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 // const generatePage = require('./src/page-template.js');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = () => {
     return inquirer.prompt([
         {
+            // Title 
             type: 'input',
             name: 'title',
             message: 'What would you like to title your README page? (Required)',
@@ -20,6 +21,7 @@ const questions = () => {
             }
         },
         {
+            // Description Section
             type: 'input',
             name: 'description',
             message: 'Provide a description of the project (Required)',
@@ -33,92 +35,97 @@ const questions = () => {
             }
         },
         {
-            type: 'input',
-            name: 'description',
-            message: 'Provide a description of the project (Required)',
-            validate: descriptionInput => {
-                if (descriptionInput) {
-                    return true;
-                } else {
-                    console.log('Please enter a description for your project!');
-                    return false;
-                }
-            }
-        },
-        {
+            // Installation Section
             type: 'input',
             name: 'installation',
-            message: 'Provide a description of the project (Required)',
+            message: 'Provide installation instructions (Required)',
             validate: installationInput => {
                 if (installationInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description for your project!');
+                    console.log('Please enter installation instructions for your project!');
                     return false;
                 }
             }
         },
         {
+            // Usage Section
             type: 'input',
             name: 'usage',
-            message: 'Provide a description of the project (Required)',
+            message: 'Provide instructions and examples for use for the project (Required)',
             validate: usageInput => {
                 if (usageInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description for your project!');
+                    console.log('Please enter instructions and examples for use for your project!');
                     return false;
                 }
             }
         },
         {
-            type: 'list',
+            // License Section
+            type: 'checkbox',
             name: 'license',
-            message: 'What did you build this project with? (Check all that apply)',
-            choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+            message: 'Select the licenses required for this project (Check all that apply)',
+            choices: ['Mozilla Public', 'MIT', 'Open', 'Apache']
         },
         {
+            // Contributing Section
             type: 'input',
             name: 'contributing',
-            message: 'Provide a description of the project (Required)',
+            message: 'Provide contribution guidelines for your project (Required)',
             validate: contributingInput => {
                 if (contributingInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description for your project!');
+                    console.log('Please enter contribution guidelines for your project!');
                     return false;
                 }
             }
         },
         {
+            // Tests Section
             type: 'input',
             name: 'tests',
-            message: 'Provide a description of the project (Required)',
+            message: 'Provide tests for the project (Required)',
             validate: testInput => {
                 if (testInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description for your project!');
+                    console.log('Please enter tests to test your project!');
                     return false;
                 }
             }
         },
-        //Section Questions contains github username, email address
         {
+            // Questions Section
             type: 'input',
-            name: 'questions',
-            message: 'Provide a description of the project (Required)',
-            validate: questionsInput => {
-                if (questionsInput) {
+            name: 'username',
+            message: 'Enter your GitHub username (Required)',
+            validate: usernameInput => {
+                if (usernameInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description for your project!');
+                    console.log('Please enter your GitHub username!');
                     return false;
                 }
             }
         },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address (Required)',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address!');
+                    return false;
+                }
+            }
+        }
     ]);
-} 
+}; 
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
