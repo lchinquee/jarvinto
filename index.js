@@ -1,10 +1,10 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-// const generatePage = require('./src/page-template.js');
+const fs = require('fs');
 
 // Array of questions for user input
-const questions = () => {
+const questions = readmeData => {
     return inquirer.prompt([
         {
             // Title 
@@ -143,12 +143,34 @@ const questions = () => {
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Function to write README file
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', fileContent, error => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'README file created!'
+            });
+        });
+    });
+};
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
-    return questions();
+    return questions()
+        .then(readmeData => {
+            return generateMarkdown(readmeData);
+        })
+        .then(pageREADME => {
+            return writeFile(pageREADME);
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
 
 // Function call to initialize app
