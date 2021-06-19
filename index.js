@@ -168,6 +168,9 @@ function init() {
         .then(pageREADME => {
             return writeFile(pageREADME);
         })
+        .then(writeFileResponse => {
+            console.log(writeFileResponse);
+        })
         .catch(error => {
             console.log(error);
         });
