@@ -64,10 +64,10 @@ const questions = readmeData => {
         },
         {
             // License Section
-            type: 'checkbox',
+            type: 'list',
             name: 'license',
-            message: 'Select the licenses required for this project (Check all that apply)',
-            choices: ['Mozilla Public', 'MIT', 'Open', 'Apache']
+            message: 'Select the licenses required for this project (Required)',
+            choices: ['Mozilla Public', 'MIT', 'Open', 'Apache', 'N/A']
         },
         {
             // Contributing Section
