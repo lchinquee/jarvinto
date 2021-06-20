@@ -67,7 +67,7 @@ const questions = readmeData => {
             type: 'list',
             name: 'license',
             message: 'Select the licenses required for this project (Required)',
-            choices: ['Mozilla Public', 'MIT', 'Open', 'Apache', 'N/A']
+            choices: ['Mozilla', 'MIT', 'Open', 'Apache', 'N/A']
         },
         {
             // Contributing Section

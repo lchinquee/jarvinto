@@ -4,8 +4,7 @@ function renderLicenseBadge(data) {
     return '';
   } else {
     return `
-    This is a test.
-    [![License badge](https://img.shields.io/badge/${data.license}-<STATUS>-<COLOR>.svg)
+  ![License badge](https://img.shields.io/badge/Made%20with-${data.license}-blueviolet.svg)
     `;
   }
 }
@@ -14,11 +13,11 @@ function renderLicenseBadge(data) {
 function renderLicenseLink(data) {
   if (data.license === 'N/A') {
     return `
-    This project does not require a license.
+  This project does not require a license.
     `
   } else {
     return `
-    This project is covered under the ${data.license} license.
+  This project is covered under the ${data.license} license.
     `
   }
 }
@@ -27,16 +26,17 @@ function renderLicenseLink(data) {
 // Function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
+  
+  ${renderLicenseBadge(data)}
 
   ## Table of Contents
-  * [Description](#Description)
-  * [Installation](#Installation)
-  * [Usage](#Usage)
-  * [License](#License)
-  * [Contributing](#Contributing)
-  * [Tests](#Tests)
-  * [Questions](#Questions)
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
 
   ## Description
   ${data.description}
