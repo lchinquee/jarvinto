@@ -29,7 +29,7 @@
   Once the script is installed the user can open it via the command line by typing in "node index" and then follow the on screen instructions.
 
   ## Script Screenshot
-  ![Script screenshot example](./assets/images/script_screenshot.jpg)
+  ![Script screenshot example](https://user-images.githubusercontent.com/81491306/122689877-e38f2780-d1f3-11eb-97e8-286d132812ae.JPG)
 
   ## License
   This project is covered under the Open license.
