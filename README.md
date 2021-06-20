@@ -28,8 +28,8 @@
   ## Usage
   Once the script is installed the user can open it via the command line by typing in "node index" and then follow the on screen instructions.
 
-  ## Script Screenshots
-
+  ## Script Screenshot
+  ![Script screenshot example](./assets/images/script_screenshot.jpg)
 
   ## License
   This project is covered under the Open license.
@@ -46,6 +46,9 @@
   # Links
   Want to see more of my work? Check out my GitHub page:
   [lchinquee](https://github.com/lchinquee) 
+
+  ## Video Link
+  [Link to Video](https://drive.google.com/file/d/1Q36dAwhl-Q7fAC-9GWlDYf4DG3JcLI0u/view?usp=sharing)
 
   ## GitHub Repo
   [Link to GitHub Repo](https://github.com/lchinquee/jarvinto)
